@@ -1,6 +1,6 @@
 <?php
 
-set_include_path('../lib');
+set_include_path('../server');
 
 require_once('pages/router.php');
 

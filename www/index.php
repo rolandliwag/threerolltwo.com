@@ -2,6 +2,6 @@
 
 set_include_path('../server');
 
-require_once('pages/router.php');
+require_once('app.php');
 
 ?>

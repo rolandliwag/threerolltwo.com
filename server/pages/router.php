@@ -1,18 +1,22 @@
 <?php
 
 require_once('common/header.php');
+require_once('common/footer.php');
 require_once('home.php');
 
 $routes = [
 	'home'=>'Home'
 ];
 
-$pageRoute = $_GET['route'];
+$route = $_GET['route'];
+$pageNumber = isset($_GET['page']) ? $_GET['page'] : '';
 
 $header = new Header();
-$page = new $routes[$pageRoute];
+$page = new $routes[$route];
+$footer = new Footer();
 
-$header->renderHeader($pageRoute);
-$page->render();
+$header->renderHeader($route, $pageNumber);
+$page->render($pageNumber);
+$footer->renderFooter();
 
 ?>

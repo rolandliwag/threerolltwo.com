@@ -3,8 +3,9 @@
 class Home {
 	protected $articles = array();
 
-	public function __construct() {
-		
+	public function __construct($dal) {
+		$this->articles = $dal->getArticles();
+		print_r($this->articles);
 	}
 	
 	public function render() {

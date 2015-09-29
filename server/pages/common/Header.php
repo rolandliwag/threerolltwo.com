@@ -1,12 +1,17 @@
 <?php
 
 class Header {
-	public function renderHeader() {
+	public function renderHeader($route) {
+		$titles = [
+			'home'=>'Latest Articles on 3/2.com',
+			'new'=>'Write a New Article on 3/2.com'
+		];
+		$title = isset($titles[$route]) ? $titles[$route] : $titles['home'];
 ?>
 <!doctype html>
 <html>
 	<head>
-		<title>Latest Articles on 3/2.com</title>
+		<title><?php echo $title; ?></title>
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 		<link rel="stylesheet/less" href="/less/style.less" type="text/css">
 		<script data-env="development" src="/3rdparty/less.js" type="text/javascript"></script>	

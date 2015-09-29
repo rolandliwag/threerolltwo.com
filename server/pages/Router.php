@@ -1,9 +1,9 @@
 <?php
 
-require_once('common/header.php');
-require_once('common/footer.php');
-require_once('home.php');
-require_once('newArticle.php');
+require_once('common/Header.php');
+require_once('common/Footer.php');
+require_once('Home.php');
+require_once('NewArticle.php');
 
 class Router {
 	private $routes = [

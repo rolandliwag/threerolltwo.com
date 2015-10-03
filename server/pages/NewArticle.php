@@ -1,10 +1,13 @@
 <?php
 
 class NewArticle {
+	private $dal;
 	private $articles = array();
 	private $renderPath = '';
 
 	public function __construct($dal) {
+		$this->dal = $dal;
+
 		if (isset($_POST['url']) && isset($_POST['title']) && isset($_POST['subheading']) &&
 				isset($_POST['shortContent']) && isset($_POST['content'])) {
 			$this->renderPath = 'POST';
@@ -22,6 +25,13 @@ class NewArticle {
 	}
 
 	public function renderPost() {
+		$urlParam = $_POST['url'];
+		$titleParam = $_POST['title'];
+		
+		$this->dal->article->insertArticle([
+			'url'=>$urlParam,
+			'title'=>$titleParam
+		]);
 ?>
 
 	<section class="new-article">

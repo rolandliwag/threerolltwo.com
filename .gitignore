@@ -1,2 +1,7 @@
+#NPM deps
 node_modules
+
+#Composer deps
+composer.lock
+vendor
 

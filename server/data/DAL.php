@@ -1,5 +1,7 @@
 <?php
 
+require_once('Article.php');
+
 class DAL {
 	private $db;
 
@@ -9,10 +11,12 @@ class DAL {
 		if ($this->db->connect_error) {
 			throw('DB Error');
 		}
+		
+		$this->article = new Article($this->db);
 	}
 	
-	public function getArticles() {
-		return $this->db->query('SELECT * FROM articles ORDER BY date');
+	public function __destruct() {
+		return $this->db->close();
 	}
 }
 

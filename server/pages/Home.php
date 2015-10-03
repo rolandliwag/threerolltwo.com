@@ -4,17 +4,25 @@ class Home {
 	protected $articles = array();
 
 	public function __construct($dal) {
-		$this->articles = $dal->getArticles();
-		print_r($this->articles);
+		$this->articles = $dal->article->getArticles();
 	}
 	
 	public function render() {
+		$latestArticle = array_shift($this->articles);
 
+		if ($latestArticle) {
 ?>
 	<section class="latest">
-		<h2>Fit for a King</h2>
-		<p>Royal Fashions straddles the line between oldschool Dubai tailors and their modern competitors. They have branches in Karama, on Sheikh Zayed Road, and in some upper echelon hotels along the Jumeirah coast.</p>
+		<h1><?php echo $latestArticle['title']; ?></h1>
+		<section><?php echo $latestArticle['subcontent']; ?></section>
 	</section>
+<?php			
+		}
+
+		foreach($this->articles as $article) {
+			print_r($article);
+		}
+?>
 	
 	<article>
 		<h2>Who shod JR?</h2>

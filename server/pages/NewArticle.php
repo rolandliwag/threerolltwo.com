@@ -27,18 +27,31 @@ class NewArticle {
 	public function renderPost() {
 		$urlParam = $_POST['url'];
 		$titleParam = $_POST['title'];
+		$subheadingParam = $_POST['subheading'];
+		$shortContentParam = $_POST['shortContent'];
+		$contentParam = $_POST['content'];
 		
-		$this->dal->article->insertArticle([
+		$result = $this->dal->article->insertArticle([
 			'url'=>$urlParam,
-			'title'=>$titleParam
+			'title'=>$titleParam,
+			'subheading'=>$subheadingParam,
+			'shortContent'=>$shortContentParam,
+			'content'=>$contentParam
 		]);
+		
+		if ($result) {
 ?>
-
 	<section class="new-article">
 		<h2>New Article Submitted</h2>
 	</section>
-
 <?php
+		} else {
+?>
+	<section class="new-article error">
+		<h2>Article could not be added</h2>
+	</section>
+<?php
+		}
 	}
 	
 	public function renderGet() {

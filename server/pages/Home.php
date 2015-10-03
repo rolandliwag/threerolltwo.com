@@ -8,31 +8,29 @@ class Home {
 	}
 	
 	public function render() {
+		$parsedown = new Parsedown();
+
 		$latestArticle = array_shift($this->articles);
 
 		if ($latestArticle) {
 ?>
 	<section class="latest">
-		<h1><?php echo $latestArticle['title']; ?></h1>
-		<section><?php echo $latestArticle['subcontent']; ?></section>
+		<h1><?php echo htmlspecialchars($latestArticle->title); ?></h1>
+		<section><?php echo $parsedown->text($latestArticle->shortContent); ?></section>
 	</section>
 <?php			
 		}
 
 		foreach($this->articles as $article) {
-			print_r($article);
+?>
+	<article>
+		<h2><?php echo htmlspecialchars($article->title); ?></h2>
+		<section><?php echo $parsedown->text($article->shortContent); ?></section>
+	</article>
+<?php
 		}
 ?>
 	
-	<article>
-		<h2>Who shod JR?</h2>
-		<p>Most men don't care about the shoes on their feet. Well, I do.</p>
-	</article>
-
-	<article>
-		<h2>Summer Formality</h2>
-		<p>One of the most absurd things about Dubai's summer is businessmen's insistence on wearing navy, charcoal, or black 2 piece suits. But what can you do when it's part of your office dress code?</p>
-	</article>
 <?php
 	}
 }

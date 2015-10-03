@@ -1,6 +1,6 @@
 <?php
 
-require_once('Article.php');
+require_once('access/ArticleAccess.php');
 
 class DAL {
 	private $db;
@@ -12,7 +12,7 @@ class DAL {
 			throw('DB Error');
 		}
 		
-		$this->article = new Article($this->db);
+		$this->article = new ArticleAccess($this->db);
 	}
 	
 	public function __destruct() {

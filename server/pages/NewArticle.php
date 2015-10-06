@@ -15,7 +15,7 @@ class NewArticle {
 			$this->renderPath = 'GET';
 		}
 	}
-	
+
 	public function render() {
 		if ($this->renderPath === 'POST') {
 			$this->renderPost();
@@ -30,15 +30,15 @@ class NewArticle {
 		$subheadingParam = $_POST['subheading'];
 		$shortContentParam = $_POST['shortContent'];
 		$contentParam = $_POST['content'];
-		
+
 		$result = $this->dal->article->insertArticle([
-			'url'=>$urlParam,
+			'url'=>$this->getUrlSlug($urlParam),
 			'title'=>$titleParam,
 			'subheading'=>$subheadingParam,
 			'shortContent'=>$shortContentParam,
 			'content'=>$contentParam
 		]);
-		
+
 		if ($result) {
 ?>
 	<section class="new-article">
@@ -53,7 +53,7 @@ class NewArticle {
 <?php
 		}
 	}
-	
+
 	public function renderGet() {
 
 ?>
@@ -69,6 +69,16 @@ class NewArticle {
 		</form>
 	</section>
 <?php
+	}
+
+	private function getUrlSlug($str) {
+		$slug = mb_strtolower($str);
+		$slug = preg_replace("/'/", '', $slug);
+		$slug = preg_replace('/[^\pL\d]+/', '-', $slug);
+		$slug = trim($slug, ' -');
+		$slug = preg_replace('/-/', '-', $slug);
+
+		return $slug;
 	}
 }
 

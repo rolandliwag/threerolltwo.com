@@ -7,9 +7,9 @@ class ArticleAccess extends DALInterface {
 	public function insertArticle($data) {
 		$article = new Article($data);
 
-		$statement = $this->db->prepare('INSERT INTO article (url, title, subheading, shortcontent, content) VALUES (?, ?, ?, ?, ?)');
-		$statement->bind_param('sssss', $article->url, $article->title,
-				$article->subheading, $article->shortContent, $article->content);
+		$statement = $this->db->prepare('INSERT INTO article (url, title, subheading, topimage, shortcontent, content) VALUES (?, ?, ?, ?, ?, ?)');
+		$statement->bind_param('ssssss', $article->url, $article->title, $article->subheading,
+                $article->topImage, $article->shortContent, $article->content);
 		$statement->execute();
 
 		$result = $statement->affected_rows;

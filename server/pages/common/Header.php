@@ -14,10 +14,10 @@ class Header {
 		<title><?php echo $title; ?></title>
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 		<link rel="stylesheet/less" href="/less/style.less" type="text/css">
-		<script data-env="development" src="/3rdparty/less.js" type="text/javascript"></script>	
+		<script data-env="development" src="/3rdparty/less.js" type="text/javascript"></script>
 	</head>
 	<body>
-		<header class="top">
+		<header class="top bottom-shadow">
 			<nav>
 				<h1><a href="/">threerolltwo.com</a></h1>
 				<a href="/tailors">Tailors</a>

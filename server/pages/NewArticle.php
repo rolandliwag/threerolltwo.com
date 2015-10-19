@@ -28,6 +28,7 @@ class NewArticle {
 		$urlParam = $_POST['url'];
 		$titleParam = $_POST['title'];
 		$subheadingParam = $_POST['subheading'];
+		$topImageParam = $_POST['topImage'];
 		$shortContentParam = $_POST['shortContent'];
 		$contentParam = $_POST['content'];
 
@@ -35,6 +36,7 @@ class NewArticle {
 			'url'=>$this->getUrlSlug($urlParam),
 			'title'=>$titleParam,
 			'subheading'=>$subheadingParam,
+			'topImage'=>$topImageParam,
 			'shortContent'=>$shortContentParam,
 			'content'=>$contentParam
 		]);
@@ -62,6 +64,7 @@ class NewArticle {
 			<input type="text" name="url" placeholder="URL"/>
 			<input type="text" name="title" placeholder="Title"/>
 			<input type="text" name="subheading" placeholder="Subheading"/>
+			<input type="text" name="topImage" placeholder="Top image markdown"/>
 			<textarea name="shortContent" placeholder="Enter short content markdown here."></textarea>
 			<textarea name="content" placeholder="Enter full content markdown here."></textarea>
 			<input type="submit" value="Preview"/>

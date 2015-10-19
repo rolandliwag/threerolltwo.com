@@ -8,5 +8,4 @@ require_once('pages/Router.php');
 $dal = new DAL($dbConfig);
 $router = new Router($dal);
 
-
 ?>

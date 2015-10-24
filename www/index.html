@@ -2,10 +2,28 @@
 <html>
     <head>
         <title>threerolltwo.com</title>
-        <link rel="stylesheet/less" type="css" href="/less/style.less"/>
+        <link rel="stylesheet" type="text/css" href="/less/style.less"/>
     </head>
     <body>
-        <cmp-email-form></cmp-email-form>
+		<header class="top bottom-shadow">
+			<nav>
+				<h1><a href="/">threerolltwo.com</a></h1>
+				<a href="/tailors">Tailors</a>
+				<a href="/style">Style</a>
+				<a href="/search">Search</a>
+			</nav>
+		</header>
+
+        <cmp-main></cmp-main>
+
+        <footer class="footer">
+            <ul class="contacts">
+                <li><a href="mailto:info@threerolltwo.com">Contact us</a></li>
+                <li><a href="mailto:adspace@threerolltwo.com">Advertizing</a></li>
+                <li><a href="/sitemap">Sitemap</a></li>
+            </ul>
+            <cmp-email-form></cmp-email-form>
+        </footer>
     </body>
     <script src="/script/requireJsConfig.js"></script>
     <script src="/3rdparty/require.js" data-main="bootstrap.js"></script>

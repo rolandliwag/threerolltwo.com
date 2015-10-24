@@ -1,0 +1,22 @@
+<main class="container">
+    <article class="latest">
+        <div class="image-wrapper">
+            Top image
+        </div>
+        <div class="text-wrapper">
+            <header class="heading">
+                <h1><a>Title</a></h1>
+                <p>Subheading</p>
+            </header>
+            <section class="body">Short content</section>
+        </div>
+    </article>
+    <article class="earlier">
+        <h2><a>Title</a></h2>
+        <section>Short content</section>
+    </article>
+    <article class="single">
+		<h2>Title</h2>
+		<section>Content</section>
+	</article>
+</main>

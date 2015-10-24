@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "express-compiless": "3.0.4",
     "gulp": "3.9.0",
     "jquery": "2.1.4",
     "less": "2.5.1",
@@ -17,6 +18,9 @@
   },
   "dependencies": {
     "bootstrap": "3.3.5",
-    "knockout": "3.3.0"
+    "express": "4.13.3",
+    "knockout": "3.3.0",
+    "morgan": "1.6.1",
+    "serverrunner": "0.6.1"
   }
 }

@@ -1,0 +1,4 @@
+<form class="email-form floating">
+    <h2>Sign up for the 3-roll-2 newsletter</h2>
+    <input type="email" placeholder="Enter your email address" data-bind="textInput: email"/>
+</form>

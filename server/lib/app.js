@@ -1,7 +1,7 @@
 var express = require('express'),
     morgan = require('morgan'),
     pathModule = require('path'),
-	DAL = require('./lib/modules/DAL');
+	DAL = require('./modules/DAL');
 
 module.exports = function createServer(config) {
     var app = express(),
@@ -14,9 +14,9 @@ module.exports = function createServer(config) {
         app.use(require('express-compiless')({root: resolvedPublicdir}));
     }
 
+    app.use(require('./handlers')(config));
+
     app.use(express.static(resolvedPublicdir));
 
-	app.use(require('./lib/handlers')(config));
-	
     return app;
 };

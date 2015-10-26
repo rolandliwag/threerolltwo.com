@@ -1,4 +1,11 @@
 <form class="email-form floating">
+    <!-- ko if: displaySuccess() -->
+    <p>Thanks for signing up!</p>
+    <!-- /ko -->
+    <!-- ko if: !displaySuccess() -->
     <h2>Sign up for the 3-roll-2 newsletter</h2>
+    <p data-bind="text: error"></p>
     <input type="email" placeholder="Enter your email address" data-bind="textInput: email"/>
+    <button class="btn-submit" data-bind="click: subscribe, disable: disableSubscribeButton">Subscribe</button>
+    <!-- /ko -->
 </form>

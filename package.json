@@ -17,11 +17,14 @@
     "requirejs-text": "2.0.12"
   },
   "dependencies": {
+    "axios": "0.7.0",
+    "bluebird": "2.10.2",
     "bootstrap": "3.3.5",
     "express": "4.13.3",
     "knockout": "3.3.0",
     "morgan": "1.6.1",
     "pg": "^4.4.3",
+    "one-validation": "2.2.0",
     "serverrunner": "0.6.1"
   }
 }

@@ -1,9 +1,9 @@
 var pg = require('pg');
 
 function PostgresAdapter(dbConfig) {
-}
-
-PostgresAdapter.prototype.query = function (sql) {
+	
+	this.query = function (config) {
+	};
 };
 
 module.exports = PostgresAdapter;

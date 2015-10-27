@@ -1,7 +1,9 @@
-var PostgresAdapter = require('./PostgresAdapter');
+var PostgresAdapter = require('./PostgresAdapter'),
+	EmailAccess = require('./EmailAccess');
 
 function DAL(dbConfig) {
-	this.db = new PostgresAdapter(dbConfig);
+	var db = new PostgresAdapter(dbConfig);
+	this.email = new EmailAccess(db);
 }
 
 module.exports = DAL;

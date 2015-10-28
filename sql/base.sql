@@ -1,0 +1,5 @@
+CREATE EXTENSION IF NOT EXISTS citext WITH SCHEMA public;
+
+CREATE DATABASE threerolltwo_com;
+
+CREATE TABLE email (email CITEXT UNIQUE PRIMARY KEY, join_date DATE);

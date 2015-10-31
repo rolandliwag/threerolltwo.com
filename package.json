@@ -4,7 +4,7 @@
   "description": "threerolltwo.com",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive -R spec server/test"
   },
   "bin": {
     "api-server": "server/bin/api-server.js"

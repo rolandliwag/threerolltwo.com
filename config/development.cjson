@@ -8,6 +8,9 @@
     "app": {
         "compiless": true,
         "publicDir": "../../www",
-        "notYetLaunched": true
+        "notYetLaunched": true,
+        "db": {
+            "url": "postgres://threerolltwo_admin@localhost:threerolltwo_com"
+        }
     }
 }

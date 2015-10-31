@@ -16,8 +16,13 @@
     "gulp": "3.9.0",
     "jquery": "2.1.4",
     "less": "2.5.1",
+    "mocha": "2.3.3",
     "requirejs": "2.1.20",
-    "requirejs-text": "2.0.12"
+    "requirejs-text": "2.0.12",
+    "sinon": "1.17.2",
+    "sinon-as-promised": "4.0.0",
+    "unexpected": "10.0.2",
+    "unexpected-sinon": "8.0.0"
   },
   "dependencies": {
     "axios": "0.7.0",

@@ -3,6 +3,7 @@ var PostgresAdapter = require('./PostgresAdapter'),
 
 function DAL(dbConfig) {
 	var db = new PostgresAdapter(dbConfig);
+
 	this.email = new EmailAccess(db);
 }
 

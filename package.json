@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "api-server": "server/bin/api-server.js"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -26,6 +29,6 @@
     "morgan": "1.6.1",
     "one-validation": "2.2.0",
     "pg": "^4.4.3",
-    "serverrunner": "0.6.1"
+    "serverrunner": "0.7.0"
   }
 }

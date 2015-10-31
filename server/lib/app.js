@@ -16,6 +16,12 @@ module.exports = function createServer(config) {
 
     app.use(require('./handlers')(config));
 
+    if (config.notYetLaunched) {
+        app.get('/', function (req, res, next) {
+            res.sendFile(pathModule.resolve(resolvedPublicdir, 'index-maintenance.html'));
+        });
+    }
+
     app.use(express.static(resolvedPublicdir));
 
     return app;

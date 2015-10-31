@@ -3,12 +3,6 @@
 @import "../3rdparty/bootstrap/variables.less";
 @import "../3rdparty/bootstrap/grid.less";
 
-@import "header.less";
-@import "main.less";
-@import "footer.less";
-
-@import "newArticle.less";
-
 body, html {
 	margin: 0;
 	padding: 0;
@@ -17,7 +11,11 @@ body, html {
     font-weight: normal;
 }
 
-h1, h2, p {
+main {
+    padding-top: 100px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
     font-weight: normal;
@@ -31,6 +29,29 @@ a {
     }
 }
 
-.bottom-shadow {
-    box-shadow: 0 1px 3px 3px rgba(0, 0, 0, 0.1);
+.container {
+    color: #333;
+
+    h1 {
+        font-size: 90px;
+    }
+
+    p {
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+}
+
+.cmp-email-form {
+    position: fixed;
+    bottom: 0;
+    display: block;
+    padding: 20px;
+    width: 100%;
+    font-size: 24px;
+    background-color: #97cbf0;
+
+    input, button {
+        font-size: 24px;
+    }
 }

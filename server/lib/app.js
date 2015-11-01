@@ -14,7 +14,7 @@ module.exports = function createServer(config) {
         app.use(require('express-compiless')({root: resolvedPublicdir}));
     }
 
-    app.use(require('./handlers')(config));
+    app.use(require('./handlers')(config, dal));
 
     if (config.notYetLaunched) {
         app.get('/', function (req, res, next) {

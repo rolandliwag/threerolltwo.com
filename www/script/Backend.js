@@ -10,7 +10,9 @@ define([
         return this.request({
             url: '/email',
             method: 'POST',
-            data: email
+            data: {
+                email: email
+            }
         });
     };
 

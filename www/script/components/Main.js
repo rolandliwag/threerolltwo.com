@@ -6,8 +6,6 @@ define([
 
     return ko.components.register('cmp-main', {
         viewModel: MainViewModel,
-        template: {
-            require: 'text!components/Main.ko'
-        }
-    });
+        template: GETTEXT('script/components/Main.ko')
+   });
 });

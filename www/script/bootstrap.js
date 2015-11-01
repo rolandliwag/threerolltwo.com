@@ -1,7 +1,7 @@
 require([
     'jquery',
     'knockout',
-    'Application'
+    'script/Application'
 ], function ($, ko, Application) {
     var app = new Application();
 

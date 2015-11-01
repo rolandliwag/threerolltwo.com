@@ -1,8 +1,8 @@
 define([
     'knockout',
-    'Backend',
-    'components/EmailForm',
-    'components/Main'
+    'script/Backend',
+    'script/components/EmailForm',
+    'script/components/Main'
 ], function (ko, Backend) {
     function Application() {
         var that = this;

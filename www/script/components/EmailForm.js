@@ -33,8 +33,6 @@ define([
 
     return ko.components.register('cmp-email-form', {
         viewModel: EmailFormViewModel,
-        template: {
-            require: 'text!components/EmailForm.ko'
-        }
+        template: GETTEXT('script/components/EmailForm.ko')
     });
 });

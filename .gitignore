@@ -3,6 +3,7 @@ node_modules
 
 #Media for site
 www/media
+www-prod/
 
 #Production configs
 config/config.cjson

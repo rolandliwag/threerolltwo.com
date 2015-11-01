@@ -1,9 +1,9 @@
 #NPM deps
 node_modules
 
-#Composer deps
-composer.lock
-vendor
-
 #Media for site
 www/media
+
+#Production configs
+config/config.cjson
+

@@ -1,6 +1,7 @@
 define([
     'knockout',
-    '3rdparty/one-validation'
+    '3rdparty/one-validation',
+    'tpl!script/components/EmailForm.ko'
 ], function (ko, validation) {
     function EmailFormViewModel(backend) {
         var that = this;
@@ -33,6 +34,8 @@ define([
 
     return ko.components.register('cmp-email-form', {
         viewModel: EmailFormViewModel,
-        template: GETTEXT('script/components/EmailForm.ko')
+        template: {
+            element: 'EmailForm'
+        }
     });
 });

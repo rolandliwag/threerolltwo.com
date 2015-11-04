@@ -3,6 +3,9 @@
 @import "../3rdparty/bootstrap/variables.less";
 @import "../3rdparty/bootstrap/grid.less";
 
+@footerHeight: 136px;
+@contentWidth: 710px;
+
 body, html {
 	margin: 0;
 	padding: 0;
@@ -12,7 +15,15 @@ body, html {
 }
 
 main {
-    padding-top: 100px;
+    padding: 50px 0;
+    min-height: 100%;
+
+    margin-bottom: @footerHeight;
+
+    &:after {
+        content: "";
+        display: block;
+    }
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -30,14 +41,15 @@ a {
 }
 
 .container {
-    color: #333;
+    color: #444;
+    width: @contentWidth;
 
     h1 {
         font-size: 90px;
     }
 
     p {
-        margin-bottom: 20px;
+        margin: 20px 0 60px;
         font-size: 30px;
     }
 }
@@ -48,10 +60,21 @@ a {
     display: block;
     padding: 20px;
     width: 100%;
+    height: @footerHeight;
+    box-sizing: border-box;
     font-size: 24px;
     background-color: #97cbf0;
 
     input, button {
         font-size: 24px;
+    }
+
+    .email-form {
+        margin: auto;
+        width: @contentWidth;
+
+        h2 {
+            margin-bottom: 10px;
+        }
     }
 }

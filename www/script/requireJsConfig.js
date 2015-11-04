@@ -3,6 +3,7 @@ var require = {
     paths: {
         jquery: "/3rdparty/jquery",
         knockout: "/3rdparty/knockout",
-        text: "/3rdparty/requirejs-text"
+        text: "/3rdparty/requirejs-text",
+        tpl: "/3rdparty/tpl"
     }
 };

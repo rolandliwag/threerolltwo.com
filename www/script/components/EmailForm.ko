@@ -1,4 +1,4 @@
-<form class="email-form container">
+<form class="email-form">
     <!-- ko if: displaySuccess() -->
     <p>Thanks for signing up!</p>
     <!-- /ko -->

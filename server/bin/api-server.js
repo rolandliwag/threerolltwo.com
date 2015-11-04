@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
 var serverrunner = require('serverrunner'),
-    pathModule = require('path');
+    pathModule = require('path'),
+    args = require('yargs').argv;
 
-serverrunner(pathModule.resolve(__dirname, '../..', 'config/config.cjson'));
+var pathToConfig = args.config || pathModule.resolve(__dirname, '../..', 'config/config.cjson');
+
+serverrunner(pathToConfig);

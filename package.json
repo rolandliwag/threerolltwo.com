@@ -31,12 +31,14 @@
     "body-parser": "1.14.1",
     "bootstrap": "3.3.5",
     "express": "4.13.3",
-    "httperrors": "^1.1.0",
+    "httperrors": "1.1.0",
     "knockout": "3.3.0",
     "morgan": "1.6.1",
     "one-validation": "2.2.0",
     "passerror": "1.1.1",
-    "pg": "^4.4.3",
-    "serverrunner": "0.8.0"
+    "pg": "4.4.3",
+    "requirejs-tpl": "0.3.0",
+    "serverrunner": "0.8.0",
+    "yargs": "3.29.0"
   }
 }

@@ -1,0 +1,22 @@
+{
+    "#include": "development.cjson",
+    "workers": 1,
+    "port": 3000,
+    "server": "../server/lib/app.js",
+    "disgraceful": true,
+    "allowForcedExit": false,
+    "app": {
+        "publicDir": "../../www-prod",
+        "compiless": true,
+        "notYetLaunched": true,
+        "db": {
+            "url": "postgres://threerolltwo_admin:123456@localhost/threerolltwo_com"
+        },
+        "cors": {
+            "origin": "threerolltwo.com"
+        },
+        "api": {
+            "hostname": "//api.threerolltwo.com"
+        }
+    }
+}

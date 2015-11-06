@@ -1,8 +1,13 @@
 var express = require('express'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    cors = require('cors');
 
 module.exports = function createHandlers(config, dal) {
 	var app = express();
+
+    if (config.cors) {
+        app.use(cors(config.cors));
+    }
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));

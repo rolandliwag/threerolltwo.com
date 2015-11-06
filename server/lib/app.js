@@ -1,6 +1,7 @@
 var express = require('express'),
     morgan = require('morgan'),
     pathModule = require('path'),
+    fs = require('fs'),
 	DAL = require('./modules/DAL');
 
 module.exports = function createServer(config) {
@@ -18,7 +19,17 @@ module.exports = function createServer(config) {
 
     if (config.notYetLaunched) {
         app.get('/', function (req, res, next) {
-            res.sendFile(pathModule.resolve(resolvedPublicdir, 'index-maintenance.html'));
+            var Htmlizer = require('htmlizer');
+
+            fs.readFile(pathModule.resolve(resolvedPublicdir, 'index-maintenance.html'), 'utf8', function (err, data) {
+                if (err) {
+                    return next(new httpErrors.InternalServerError(err));
+                }
+
+                res.send(new Htmlizer(data, {noConflict: true}).toString({
+                    bootstrapConfig: "<script>window.CONFIG = " + JSON.stringify(config) + ';</script>'
+                }));
+            });
         });
     }
 

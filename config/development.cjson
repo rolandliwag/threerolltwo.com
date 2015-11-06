@@ -11,6 +11,9 @@
         "notYetLaunched": true,
         "db": {
             "url": "postgres://threerolltwo_admin:123456@localhost/threerolltwo_com"
+        },
+        "api": {
+            "hostname": "//localhost:3000"
         }
     }
 }

@@ -42,6 +42,7 @@
     "pg": "4.4.3",
     "requirejs-tpl": "0.3.0",
     "serverrunner": "0.8.0",
+    "underscore": "1.8.3",
     "yargs": "3.29.0"
   }
 }

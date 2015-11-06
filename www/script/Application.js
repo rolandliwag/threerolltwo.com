@@ -7,7 +7,9 @@ define([
     function Application() {
         var that = this;
 
-        this.backend = new Backend();
+        this.backend = new Backend({
+            hostname: CONFIG.api.hostname
+        });
 
         ko.components.loaders.unshift({
             loadViewModel: function (name, viewModelConfig, next) {

@@ -1,9 +1,15 @@
 define([
     '3rdparty/bluebird',
-    '3rdparty/axios'
-], function (Promise, request) {
+    '3rdparty/axios',
+    'underscore'
+], function (Promise, request, _) {
     function Backend(config) {
-        this.request = request;
+        var hostname = config.hostname;
+
+        this.request = function (opts) {
+            opts = _.defaults({url: hostname + opts.url}, opts);
+            return request(opts);
+        };
     }
 
     Backend.prototype.subscribeToNewsletter = function (email) {

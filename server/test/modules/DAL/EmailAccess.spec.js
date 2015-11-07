@@ -24,6 +24,15 @@ describe('DAL/EmailAccess', function () {
         });
     });
 
+    it('should not reject when email already exists when calling .add()', function () {
+        db.query.rejects({
+            constraint: 'email_pkey',
+            routine: '_bt_check_unique'
+        });
+
+        return email.add('existing@example.com');
+    });
+
     afterEach(function () {
         db.query.reset();
     });

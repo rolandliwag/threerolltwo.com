@@ -35,6 +35,7 @@
     "cors": "2.7.1",
     "express": "4.13.3",
     "httperrors": "1.1.0",
+    "jsonwebtoken": "5.4.1",
     "knockout": "3.3.0",
     "morgan": "1.6.1",
     "one-validation": "2.2.0",

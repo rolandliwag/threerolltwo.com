@@ -22,5 +22,8 @@ define([
         });
     };
 
+    Backend.prototype.getArticles = function (offset) {
+    };
+
     return Backend;
 });

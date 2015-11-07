@@ -2,6 +2,7 @@ var express = require('express'),
     morgan = require('morgan'),
     pathModule = require('path'),
     fs = require('fs'),
+    httpErrors = require('httperrors'),
 	DAL = require('./modules/DAL');
 
 module.exports = function createServer(config) {

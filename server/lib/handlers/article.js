@@ -1,17 +1,46 @@
-var express = require('express');
+var express = require('express'),
+	requireAuth = require('../middleware/requireAuth'),
+	Article = require('../modules/DAL/models/Article');
 
 module.exports = function createHandler(config, dal) {
 	var app = express();
 
-	app.get('/', function (req, res, next) {
-		dal.article.getLatestInShort(20)
-			.then(function (results) {
-				res.send(results);
+	app
+		.get('/', function (req, res, next) {
+			dal.article.getLatestInShort(20).then(function (articles) {
+				res.send(articles);
 			})
-			.error(function () {
+			.catch(function () {
 				next(new httpErrors.InternalServerError());
 			});
-	});
+		})
+		.get('/:url', function (req, res, next) {
+			dal.article.getByUrl(req.params.url).then(function (article) {
+				if (!article) {
+					return next(new httpErrors.NotFound());
+				}
+				
+				res.send(article);
+			})
+			.catch(function (err) {
+				next(new httpErrors.InternalServerError(err));
+			})
+			
+		})
+		.put('/:url', requireAuth(config.auth), function (req, res, next) {
+			var article = new Article(req.body.article);
+			
+			if (!article.isValid()) {
+				return next(new httpErrors.BadRequest());
+			}
+
+			dal.article.add(article).then(function (result) {
+				res.status(201).send();
+			})
+			.catch(function (err) {
+				next(new httpErrors.InternalServerError(err));
+			})
+		});
 	
 	return app;
 }

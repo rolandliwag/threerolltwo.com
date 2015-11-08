@@ -17,6 +17,7 @@ module.exports = function createServer(config) {
     }
 
     app.use(require('./handlers')(config, dal));
+	app.use('/prerender', require('./prerender')(config, dal));
 
     if (config.notYetLaunched) {
         app.get('/', function (req, res, next) {

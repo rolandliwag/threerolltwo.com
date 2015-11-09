@@ -9,7 +9,7 @@ module.exports = function createMiddleware(authConfig) {
         throw new Error('secret and maxAge must be provided')
     }
 
-    var secret = config.auth.secret;
+    var secret = authConfig.secret;
 
     return function (req, res, next) {
         var token = req.body.token;

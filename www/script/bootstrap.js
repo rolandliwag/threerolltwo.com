@@ -5,7 +5,6 @@ require([
 ], function ($, ko, Application) {
     var app = new Application();
 
-    $(function () {
-        ko.applyBindings(app, document.body);
-    });
+    app.init();
+    ko.applyBindings(app, document.body);
 });

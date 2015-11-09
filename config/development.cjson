@@ -9,6 +9,7 @@
         "compiless": true,
         "publicDir": "../../www",
         "notYetLaunched": true,
+        "renderWithHtmlizer": true,
         "db": {
             "url": "postgres://threerolltwo_admin:123456@localhost/threerolltwo_com"
         },

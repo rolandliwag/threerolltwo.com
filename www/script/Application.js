@@ -1,15 +1,18 @@
 define([
     'knockout',
+    '3rdparty/bluebird',
     'script/Backend',
-    'script/components/EmailForm',
-    'script/components/Main'
-], function (ko, Backend) {
+    'script/Router',
+    'script/components/EmailForm'
+], function (ko, Promise, Backend, Router) {
     function Application() {
         var that = this;
 
         this.backend = new Backend({
             hostname: CONFIG.api.hostname
         });
+
+        this.router = new Router(this.backend, window.location.pathname);
 
         ko.components.loaders.unshift({
             loadViewModel: function (name, viewModelConfig, next) {
@@ -24,6 +27,10 @@ define([
             }
         });
     }
+
+    Application.prototype.init = function () {
+        this.router.start();
+    };
 
     return Application;
 });

@@ -39,6 +39,7 @@
     "knockout": "3.3.0",
     "morgan": "1.6.1",
     "one-validation": "2.2.0",
+    "page": "1.6.4",
     "passerror": "1.1.1",
     "pg": "4.4.3",
     "requirejs-tpl": "0.3.0",

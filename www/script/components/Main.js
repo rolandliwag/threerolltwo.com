@@ -2,7 +2,8 @@ define([
     'knockout',
     'tpl!script/components/Main.ko'
 ], function (ko) {
-    function MainViewModel() {
+    function MainViewModel(backend) {
+        this.backend = backend;
     }
 
     return ko.components.register('cmp-main', {

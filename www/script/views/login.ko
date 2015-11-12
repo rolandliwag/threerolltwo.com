@@ -1,0 +1,7 @@
+<main class="container">
+    <form class="login">
+        <input type="email" placeholder="Email" data-bind="textInput: email"/>
+        <input type="password" placeholder="Password" data-bind="textInput: password"/>
+        <button data-bind="click: submit">Log in</button>
+    </form>
+</main>

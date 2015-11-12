@@ -3,10 +3,10 @@ define([
     '3rdparty/page',
     'script/routes/PageState',
     'script/routes/createIndexHandler',
-    'script/routes/article',
-    'script/routes/login',
+    'script/routes/createArticleHandler',
+    'script/routes/createLoginHandler',
     'script/routes/admin'
-], function (ko, page, PageState, createIndexHandler, article, login, admin) {
+], function (ko, page, PageState, createIndexHandler, createArticleHandler, createLoginHandler, admin) {
     function Router(backend, initialRoute) {
         var that = this;
 
@@ -15,7 +15,9 @@ define([
          */
         this.currentRoute = new PageState();
 
+        page('/login', createLoginHandler(backend, this.currentRoute));
         page('/', createIndexHandler(backend, this.currentRoute));
+        page('/:url', createArticleHandler(backend, this.currentRoute));
     }
 
     Router.prototype.start = function () {

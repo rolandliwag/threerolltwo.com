@@ -53,5 +53,17 @@ module.exports = function createServer(config) {
 
     app.use(express.static(resolvedPublicdir));
 
+    if (config.redirectNotFoundToIndex) {
+        app.use(function (req, res, next) {
+            renderWithHtmlizer(pathModule.resolve(resolvedPublicdir, 'index.html'), function (err, html) {
+                if (err) {
+                    return next(new httpErrors.InternalServerError(err));
+                }
+
+                res.send(html);
+            });
+        });
+    }
+
     return app;
 };

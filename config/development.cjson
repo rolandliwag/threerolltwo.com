@@ -19,6 +19,7 @@
         "auth": {
             "secret": "abc123",
             "maxAge": "2h"
-        }
+        },
+        "redirectNotFoundToIndex": true
     }
 }

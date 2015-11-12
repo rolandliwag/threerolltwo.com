@@ -22,7 +22,27 @@ define([
         });
     };
 
+    Backend.prototype.login = function (email, password) {
+        return this.request({
+            url: '/login',
+            method: 'POST',
+            data: {
+                email: email,
+                password: password
+            }
+        });
+    };
+
     Backend.prototype.getArticles = function (offset) {
+        return this.request({
+            url: '/article'
+        });
+    };
+
+    Backend.prototype.getArticle = function (url) {
+        return this.request({
+            url: '/article/' + url
+        });
     };
 
     return Backend;

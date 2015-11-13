@@ -24,8 +24,10 @@ define([
         };
 
         return function (context, next) {
-            pageState.template('login');
-            pageState.data(new LoginViewModel());
+            pageState({
+                template: 'login',
+                data: new LoginViewModel()
+            });
         };
     };
 

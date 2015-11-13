@@ -26,8 +26,10 @@ define([
         };
 
         return function (context, next) {
-            pageState.template('index');
-            pageState.data(new IndexViewModel());
+            pageState({
+                template: 'index',
+                data: new IndexViewModel()
+            });
         };
     };
 

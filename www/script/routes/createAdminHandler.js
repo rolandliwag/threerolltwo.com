@@ -22,8 +22,10 @@ define([
         };
 
         return function (context, next) {
-            pageState.template('admin');
-            pageState.data(new AdminViewModel());
+            pageState({
+                template: 'admin',
+                data: new AdminViewModel()
+            });
         };
     };
 

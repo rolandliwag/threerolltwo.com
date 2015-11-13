@@ -13,7 +13,10 @@ define([
         /**
          * @public
          */
-        this.currentRoute = new PageState();
+        this.currentRoute = ko.observable({
+            template: '',
+            data: null
+        });
 
         page('/login', createLoginHandler(backend, this.currentRoute));
         page('/admin', createAdminHandler(backend, this.currentRoute));

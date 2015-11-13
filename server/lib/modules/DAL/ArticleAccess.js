@@ -37,7 +37,9 @@ function ArticleAccess(db) {
 			values: [url]
 		}).then(function (result) {
 			return new Promise(function (resolve, reject) {
-				resolve(new Article(result));
+                if (result.rows.length) {
+                    resolve(new Article(result.rows[0]));
+                }
 			});
 		});
 	};

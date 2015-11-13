@@ -2,19 +2,20 @@
 <html>
     <head>
         <title>threerolltwo.com</title>
+        <meta name="description" content="You don't have to dress up to dress well. A menswear blog in Dubai featuring tailored suit reviews and style articles.">
         <link rel="stylesheet" type="text/css" href="/less/style.less"/>
     </head>
     <body>
 		<header class="top bottom-shadow">
 			<nav>
 				<h1><a href="/">threerolltwo.com</a></h1>
-				<a href="/tailors">Tailors</a>
+				<a href="/reviews">Suit Reviews</a>
 				<a href="/style">Style</a>
 				<a href="/search">Search</a>
 			</nav>
 		</header>
 
-        <div data-bind="template: {if: router.currentRoute.template, name: router.currentRoute.template, data: router.currentRoute.data}"></div>
+        <div data-bind="template: {if: router.currentRoute(), name: router.currentRoute().template, data: router.currentRoute().data}"></div>
 
         <footer class="footer">
             <ul class="contacts">

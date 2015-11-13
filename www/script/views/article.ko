@@ -1,7 +1,7 @@
 <main class="container">
-    <article class="single" data-bind="with: article">
+    <article class="single">
         <div class="image-wrapper">
-            <img src="about:blank" class="top-image" data-bind="attr: {src: topImage}"/>
+            <img src="about:blank" class="top-image" data-bind="attr: {src: topImageSrc}"/>
         </div>
         <div class="text-wrapper">
             <header class="heading">

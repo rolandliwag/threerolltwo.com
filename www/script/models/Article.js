@@ -1,16 +1,18 @@
 define([
     'knockout'
 ], function (ko) {
-    function Article(backend) {
-        this.backend = backend;
+    function Article(backend, data) {
+        var backend = backend;
 
-        this.url = ko.observable();
-        this.title = ko.observable();
-        this.subheading = ko.observable();
-        this.topImageAlt = ko.observable();
-        this.topImageSrc = ko.observable();
-        this.content = ko.observable();
-        this.shortContent = ko.observable();
+        data = data || {};
+
+        this.url = ko.observable(data.url);
+        this.title = ko.observable(data.title);
+        this.subheading = ko.observable(data.subheading);
+        this.topImageAlt = ko.observable(data.topImageAlt);
+        this.topImageSrc = ko.observable(data.topImageSrc);
+        this.content = ko.observable(data.content);
+        this.shortContent = ko.observable(data.shortContent);
     }
 
     Article.prototype.toData = function () {

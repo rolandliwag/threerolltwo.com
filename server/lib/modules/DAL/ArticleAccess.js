@@ -3,7 +3,7 @@ var Article = require('./ArticleModel');
 function ArticleAccess(db) {
 	this.getLatestInShort = function (number) {
 		return db.query({
-			text: 'SELECT url, title, short_content, top_image FROM article ORDER BY created_date DESC LIMIT $1',
+			text: 'SELECT * FROM article ORDER BY created_date DESC LIMIT $1',
 			values: [number]
 		}).then(function (result) {
             return result.rows.map(function (row) {

@@ -1,18 +1,33 @@
 define([
+    'knockout',
     'script/models/Article',
     'tpl!script/views/index.ko'
-], function (Article) {
+], function (ko, Article) {
     function createHandler(backend, pageState) {
-        return function (context, next) {
-            backend.getArticles().then(function (articles) {
-                pageState.template('index');
-                pageState.data(articles.map(function (data) {
-                    return new Article(data);
+        function IndexViewModel() {
+            this.latestArticle = ko.observable();
+            this.articles = ko.observableArray();
+
+            this.init();
+        }
+
+        IndexViewModel.prototype.init = function () {
+            var that = this;
+
+            backend.getArticles().then(function (response) {
+                var articles = response.data,
+                    latestArticle = new Article(backend, articles.shift());
+
+                that.latestArticle(latestArticle);
+                that.articles(articles.map(function (article) {
+                    return new Article(backend, article);
                 }));
             })
-            .catch(function () {
-                next('Unable to load articles');
-            });
+        };
+
+        return function (context, next) {
+            pageState.template('index');
+            pageState.data(new IndexViewModel());
         };
     };
 

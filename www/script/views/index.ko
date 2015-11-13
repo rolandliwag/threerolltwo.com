@@ -1,7 +1,6 @@
 <main class="container">
     <article class="latest" data-bind="with: latestArticle">
         <div class="image-wrapper">
-            <img src="about:blank" class="top-image" data-bind="attr: {src: topImage}"/>
         </div>
         <div class="text-wrapper">
             <header class="heading">
@@ -11,8 +10,10 @@
             <section class="body" data-bind="text: shortContent"></section>
         </div>
     </article>
+    <!-- ko foreach: articles -->
     <article class="earlier">
-        <h2><a>Title</a></h2>
-        <section>Short content</section>
+        <h2><a data-bind="attr: {href: url}, text: title"></a></h2>
+        <section data-bind="text: shortContent"></section>
     </article>
+    <!-- /ko -->
 </main>

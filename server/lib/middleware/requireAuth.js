@@ -15,6 +15,10 @@ module.exports = function createMiddleware(authConfig) {
     return function (req, res, next) {
         var token = req.cookies[authConfig.cookieName];
 
+        if (!token) {
+            return next(new httpErrors.Unauthorized());
+        }
+
         if (!jwt.verify(token, secret, {maxAge: maxAge})) {
             return next(new httpErrors.Unauthorized());
         }

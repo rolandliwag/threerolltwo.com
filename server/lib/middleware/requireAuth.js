@@ -9,10 +9,11 @@ module.exports = function createMiddleware(authConfig) {
         throw new Error('secret and maxAge must be provided')
     }
 
-    var secret = authConfig.secret;
+    var secret = authConfig.secret,
+        maxAge = authConfig.maxAge;
 
     return function (req, res, next) {
-        var token = req.body.token;
+        var token = req.cookies[authConfig.cookieName];
 
         if (!jwt.verify(token, secret, {maxAge: maxAge})) {
             return next(new httpErrors.Unauthorized());

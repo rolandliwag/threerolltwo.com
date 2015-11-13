@@ -1,7 +1,7 @@
 var express = require('express'),
     httpErrors = require('httperrors'),
 	requireAuth = require('../middleware/requireAuth'),
-	Article = require('../modules/DAL/models/Article');
+	Article = require('../modules/DAL/ArticleModel');
 
 module.exports = function createHandler(config, dal) {
 	var app = express();
@@ -30,7 +30,7 @@ module.exports = function createHandler(config, dal) {
 
 		})
 		.put('/:url', requireAuth(config.auth), function (req, res, next) {
-			var article = new Article(req.body.article);
+			var article = new Article(req.body);
 
 			if (!article.isValid()) {
 				return next(new httpErrors.BadRequest());

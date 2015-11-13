@@ -47,11 +47,10 @@ define([
     };
 
     Backend.prototype.add = function (article) {
-        console.log(article.url());
         return this.request({
             url: '/article/' + article.url(),
             method: 'PUT',
-            data: ko.utils.unwrapObservable(article)
+            data: article.toData()
         });
     };
 

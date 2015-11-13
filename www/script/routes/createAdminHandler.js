@@ -15,6 +15,9 @@ define([
             this.requesting(true);
             backend.add(this.article).then(function () {
                 that.requesting(false);
+            })
+            .catch(function () {
+                that.requesting(false);
             });
         };
 

@@ -1,5 +1,6 @@
 var express = require('express'),
     bodyParser = require('body-parser'),
+    cookieParser = require('cookie-parser'),
     cors = require('cors');
 
 module.exports = function createHandlers(config, dal) {
@@ -9,6 +10,7 @@ module.exports = function createHandlers(config, dal) {
         app.use(cors(config.cors));
     }
 
+    app.use(cookieParser());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
     app.use('/article', require('./article')(config, dal));

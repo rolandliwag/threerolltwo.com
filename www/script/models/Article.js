@@ -13,5 +13,17 @@ define([
         this.shortContent = ko.observable();
     }
 
+    Article.prototype.toData = function () {
+        return {
+            url: this.url(),
+            title: this.title(),
+            subheading: this.subheading(),
+            topImageAlt: this.topImageAlt(),
+            topImageSrc: this.topImageSrc(),
+            content: this.content(),
+            shortContent: this.shortContent()
+        };
+    };
+
     return Article;
 });

@@ -17,6 +17,7 @@
             "hostname": "//localhost:3000"
         },
         "auth": {
+            "cookieName": "auth",
             "secret": "abc123",
             "maxAge": "2h"
         },

@@ -2,13 +2,18 @@
 
 .footer {
     position: fixed;
+    display: flex;
     bottom: 0;
     width: 100%;
     height: @footerHeight;
     padding: 10px 20px 20px;
+    color: white;
+    font-family: Oswald, sans-serif;
     background-color: @focusColor;
 
     .contacts {
+        display: inline-block;
+        width: 50%;
         margin: 0;
         padding: 0;
         list-style-type: none;
@@ -20,5 +25,9 @@
         a {
             color: white;
         }
+    }
+
+    .email-form {
+        display: inline-block;
     }
 }

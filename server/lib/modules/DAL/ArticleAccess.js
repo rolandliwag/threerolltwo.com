@@ -25,7 +25,6 @@ function ArticleAccess(db) {
 			]
 		}).catch(function (err) {
 			return new Promise(function (resolve, reject) {
-                console.log(err);
 				reject(err);
 			});
 		});

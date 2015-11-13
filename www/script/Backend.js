@@ -1,8 +1,9 @@
 define([
+    'knockout',
     '3rdparty/bluebird',
     '3rdparty/axios',
     'underscore'
-], function (Promise, request, _) {
+], function (ko, Promise, request, _) {
     function Backend(config) {
         var hostname = config.hostname;
 
@@ -42,6 +43,15 @@ define([
     Backend.prototype.getArticle = function (url) {
         return this.request({
             url: '/article/' + url
+        });
+    };
+
+    Backend.prototype.add = function (article) {
+        console.log(article.url());
+        return this.request({
+            url: '/article/' + article.url(),
+            method: 'PUT',
+            data: ko.utils.unwrapObservable(article)
         });
     };
 

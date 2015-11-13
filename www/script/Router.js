@@ -5,8 +5,8 @@ define([
     'script/routes/createIndexHandler',
     'script/routes/createArticleHandler',
     'script/routes/createLoginHandler',
-    'script/routes/admin'
-], function (ko, page, PageState, createIndexHandler, createArticleHandler, createLoginHandler, admin) {
+    'script/routes/createAdminHandler'
+], function (ko, page, PageState, createIndexHandler, createArticleHandler, createLoginHandler, createAdminHandler) {
     function Router(backend, initialRoute) {
         var that = this;
 
@@ -16,6 +16,8 @@ define([
         this.currentRoute = new PageState();
 
         page('/login', createLoginHandler(backend, this.currentRoute));
+        page('/admin', createAdminHandler(backend, this.currentRoute));
+
         page('/', createIndexHandler(backend, this.currentRoute));
         page('/:url', createArticleHandler(backend, this.currentRoute));
     }

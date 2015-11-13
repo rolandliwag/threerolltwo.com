@@ -1,7 +1,8 @@
-<main class="container">
+<main class="container login">
+    <h1>Login</h1>
     <form class="login">
         <input type="email" placeholder="Email" data-bind="textInput: email"/>
         <input type="password" placeholder="Password" data-bind="textInput: password"/>
-        <button data-bind="click: submit">Log in</button>
+        <button data-bind="click: submit, disable: requesting">Log in</button>
     </form>
 </main>

@@ -1,15 +1,26 @@
 define([
     'knockout',
+    '3rdparty/page',
     'tpl!script/views/login.ko'
-], function (ko) {
+], function (ko, page) {
     function createHandler(backend, pageState) {
         function LoginViewModel() {
             this.email = ko.observable();
             this.password = ko.observable();
+            this.requesting = ko.observable();
         }
 
         LoginViewModel.prototype.submit = function () {
-            backend.login(this.email(), this.password());
+            var that = this;
+
+            this.requesting(true);
+            backend.login(this.email(), this.password()).then(function (response) {
+                that.requesting(false);
+
+                page('/admin');
+            })
+            .catch(function (err) {
+            });
         };
 
         return function (context, next) {

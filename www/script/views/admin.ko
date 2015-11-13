@@ -1,0 +1,13 @@
+<main class="container admin">
+    <h1>Admin</h1>
+    <form class="new-article">
+        <input type="text" placeholder="URL" data-bind="textInput: article.url"/>
+        <input type="text" placeholder="Article Title" data-bind="textInput: article.title"/>
+        <input type="text" placeholder="Subheading" data-bind="textInput: article.subheading"/>
+        <textarea placeholder="Short content" data-bind="textInput: article.shortContent"/>
+        <input type="text" placeholder="Top image title" data-bind="textInput: article.topImageAlt"/>
+        <input type="text" placeholder="Top image src" data-bind="textInput: article.topImageSrc"/>
+        <textarea placeholder="Content" data-bind="textInput: article.content"/>
+        <button class="button" data-bind="click: submit, disable: requesting">Save</button>
+    </form>
+</main>

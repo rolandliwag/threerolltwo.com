@@ -4,9 +4,11 @@ define([
     function Article(backend) {
         this.backend = backend;
 
+        this.url = ko.observable();
         this.title = ko.observable();
         this.subheading = ko.observable();
-        this.topImage = ko.observable();
+        this.topImageAlt = ko.observable();
+        this.topImageSrc = ko.observable();
         this.content = ko.observable();
         this.shortContent = ko.observable();
     }

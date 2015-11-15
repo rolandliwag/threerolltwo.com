@@ -11,8 +11,7 @@ define([
                 });
             })
             .catch(function (err) {
-                console.log(err);
-                next('Unable to load articles');
+                next('Unable to load article');
             });
         };
     };

@@ -38,6 +38,8 @@ function ArticleAccess(db) {
 			return new Promise(function (resolve, reject) {
                 if (result.rows.length) {
                     resolve(new Article(result.rows[0]));
+                } else {
+                    resolve();
                 }
 			});
 		});

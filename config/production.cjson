@@ -13,7 +13,7 @@
             "url": "postgres://threerolltwo_admin:123456@localhost/threerolltwo_com"
         },
         "cors": {
-            "origin": "http://threerolltwo.com"
+            "origin": "http://threerolltwo.com, https://threerolltwo.com"
         },
         "api": {
             "hostname": "//api.threerolltwo.com"

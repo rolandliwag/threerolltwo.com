@@ -9,6 +9,7 @@
     padding: 10px 20px 20px;
     color: white;
     font-family: Oswald, sans-serif;
+    font-size: @footerFontSize;
     background-color: @focusColor;
 
     .contacts {
@@ -19,7 +20,7 @@
         list-style-type: none;
 
         li {
-            margin: 5px 0;
+            margin: 0 0 5px;
         }
 
         a {
@@ -29,5 +30,31 @@
 
     .email-form {
         display: inline-block;
+        
+        h3 {
+            font-size: @footerFontSize;
+        }
+        
+        .input-email {
+            padding: 5px;
+            border: 0;
+        }
+        
+        .btn-submit {
+            padding: 5px 20px;
+            cursor: pointer;
+            color: white;
+            background-color: lighten(@focusColor, 8%);
+            border: 0;
+            
+            &:disabled {
+                color: #666;
+                background-color: #ccc;
+            }
+
+            &:hover {
+                background-color: lighten(@focusColor, 10%);
+            }
+        }
     }
 }

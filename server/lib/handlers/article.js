@@ -26,7 +26,7 @@ module.exports = function createHandler(config, dal) {
 			})
 			.catch(function (err) {
 				next(new httpErrors.InternalServerError(err));
-			})
+			});
 
 		})
 		.put('/:url', requireAuth(config.auth), function (req, res, next) {
@@ -41,8 +41,8 @@ module.exports = function createHandler(config, dal) {
 			})
 			.catch(function (err) {
 				next(new httpErrors.InternalServerError(err));
-			})
+			});
 		});
 
 	return app;
-}
+};

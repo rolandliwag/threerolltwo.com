@@ -5,6 +5,7 @@ www-prod/%.html: $(shell find www -type f)
 	rm -rf www-prod
 	./node_modules/assetgraph-builder/bin/buildProduction --outroot www-prod --root www --define CONFIG=`./node_modules/oconf/bin/oconf --extract-option "app" config/production.cjson` www/$(@F)
 
+.PHONY: database-setup
 database-setup:
 	PGPASSWORD=123456 psql -U threerolltwo_admin -h localhost -f sql/base.sql postgres -c \
 		"SELECT pg_terminate_backend(pg_stat_activity.pid) \
@@ -19,3 +20,7 @@ database-setup:
 		"CREATE DATABASE threerolltwo_com;"
 
 	PGPASSWORD=123456 psql -U threerolltwo_admin -h localhost -f sql/base.sql threerolltwo_com
+
+.PHONY: server-lint
+server-lint:
+	./node_modules/jshint/bin/jshint --config server/.jshintrc server

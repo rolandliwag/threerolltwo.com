@@ -6,7 +6,7 @@ var jwt = require('jsonwebtoken'),
  */
 module.exports = function createMiddleware(authConfig) {
     if (!('secret' in authConfig) || !('maxAge' in authConfig)) {
-        throw new Error('secret and maxAge must be provided')
+        throw new Error('secret and maxAge must be provided');
     }
 
     var secret = authConfig.secret,

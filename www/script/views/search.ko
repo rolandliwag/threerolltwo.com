@@ -1,0 +1,12 @@
+<main class="container search">
+	<h1 class="heading">Search</h1>
+	<form class="search-form">
+		<input type="text" data-bind="query" placeholder="Enter search terms"/>
+		<button class="button" data-bind="click: search">Go</button>
+	</form>
+	<ul class="results" data-bind="foreach: results">
+		<li class="result">
+			<a data-bind="attr: {href: url}, text: title"></a>
+		</li>
+	<ul>
+</main>

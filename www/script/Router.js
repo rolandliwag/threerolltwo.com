@@ -3,11 +3,12 @@ define([
     '3rdparty/page',
     'script/routes/PageState',
     'script/routes/createIndexHandler',
+	'script/routes/createSearchHandler',
     'script/routes/createArticleHandler',
     'script/routes/createLoginHandler',
     'script/routes/createAdminHandler',
     'script/routes/create404Handler'
-], function (ko, page, PageState, createIndexHandler, createArticleHandler, createLoginHandler, createAdminHandler, create404Handler) {
+], function (ko, page, PageState, createIndexHandler, createSearchHandler, createArticleHandler, createLoginHandler, createAdminHandler, create404Handler) {
     function Router(backend, initialRoute) {
         var that = this;
 
@@ -23,6 +24,7 @@ define([
         page('/admin', createAdminHandler(backend, this.currentRoute));
 
         page('/', createIndexHandler(backend, this.currentRoute));
+		page('/search/:query', createSearchHandler(backend, this.currentRoute));
         page('/:url', createArticleHandler(backend, this.currentRoute));
 
         page('*', create404Handler(backend, this.currentRoute));

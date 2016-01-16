@@ -7,7 +7,8 @@ define([
     'script/routes/createArticleHandler',
     'script/routes/createLoginHandler',
     'script/routes/createAdminHandler',
-    'script/routes/create404Handler'
+    'script/routes/create404Handler',
+    'tpl!script/views/401.ko'
 ], function (ko, page, PageState, createIndexHandler, createSearchHandler, createArticleHandler, createLoginHandler, createAdminHandler, create404Handler) {
     function Router(backend, initialRoute) {
         var that = this;
@@ -20,8 +21,17 @@ define([
             data: null
         });
 
+        function requireAuth(context, next) {
+            backend.getAuth().then(next).catch(function () {
+                that.currentRoute({
+                    template: '401',
+                    data: {}
+                });
+            });
+        }
+
         page('/login', createLoginHandler(backend, this.currentRoute));
-        page('/admin', createAdminHandler(backend, this.currentRoute));
+        page('/admin', requireAuth, createAdminHandler(backend, this.currentRoute));
 
         page('/', createIndexHandler(backend, this.currentRoute));
 		page('/search/:query', createSearchHandler(backend, this.currentRoute));

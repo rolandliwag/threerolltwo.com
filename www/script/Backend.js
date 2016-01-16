@@ -46,6 +46,12 @@ define([
         });
     };
 
+    Backend.prototype.getAuth = function () {
+        return this.request({
+            url: '/auth'
+        });
+    };
+
     Backend.prototype.add = function (article) {
         return this.request({
             url: '/article/' + article.url(),

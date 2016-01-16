@@ -16,7 +16,7 @@ module.exports = function createHandlers(config, dal) {
     app.use('/article', require('./article')(config, dal));
 	app.use('/search', require('./search')(config, dal));
 	app.use('/email', require('./email')(config, dal));
-    app.post('/login', require('./login')(config));
+    app.use('/auth', require('./auth')(config));
 
 	return app;
 };

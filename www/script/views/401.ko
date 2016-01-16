@@ -1,0 +1,5 @@
+<main class="container">
+    <section class="single error">
+        <h1>Unauthorized</h1>
+    </section>
+</main>

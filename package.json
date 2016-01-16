@@ -31,7 +31,7 @@
   "dependencies": {
     "async": "1.5.0",
     "axios": "0.7.0",
-    "bluebird": "2.10.2",
+    "bluebird": "3.1.1",
     "body-parser": "1.14.1",
     "bootstrap": "3.3.5",
     "cookie-parser": "1.4.0",
@@ -45,6 +45,7 @@
     "page": "1.6.4",
     "passerror": "1.1.1",
     "pg": "4.4.3",
+    "purify": "3.3.1",
     "requirejs-tpl": "0.3.0",
     "serverrunner": "0.8.0",
     "underscore": "1.8.3",

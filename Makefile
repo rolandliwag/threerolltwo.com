@@ -24,3 +24,8 @@ database-setup:
 .PHONY: server-lint
 server-lint:
 	./node_modules/jshint/bin/jshint --config server/.jshintrc server
+
+.PHONY: server-test
+server-test:
+	./node_modules/mocha/bin/mocha --recursive -R spec server/test
+

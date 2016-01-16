@@ -2,7 +2,8 @@
 
 var pg = require('pg'),
     passError = require('passerror'),
-    async = require('async');
+    async = require('async'),
+    Promise = require('bluebird');
 
 function PostgresAdapter(dbConfig) {
 

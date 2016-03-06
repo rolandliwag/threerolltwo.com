@@ -19,7 +19,8 @@
         "auth": {
             "cookieName": "auth",
             "secret": "abc123",
-            "maxAge": "2h"
+            "maxAge": "2h",
+            "acceptAnyPassword": true
         },
         "redirectNotFoundToIndex": true
     }

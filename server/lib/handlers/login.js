@@ -1,5 +1,4 @@
-var jwt = require('jsonwebtoken'),
-	validation = require('one-validation');
+var jwt = require('jsonwebtoken');
 
 module.exports = function createHandler(config) {
     var authConfig = config.auth,
@@ -8,6 +7,10 @@ module.exports = function createHandler(config) {
     return function (req, res, next) {
         var email = req.body.email,
             password = req.body.password;
+
+        if (!authConfig.acceptAnyPassword && (email !== authConfig.email || password !== authConfig.password)) {
+            return res.status(403).send();
+        }
 
         var token = jwt.sign({
                 email: email,

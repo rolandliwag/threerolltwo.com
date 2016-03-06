@@ -17,6 +17,9 @@
         },
         "api": {
             "hostname": "//api.threerolltwo.com"
+        },
+        "auth": {
+            "acceptAnyPassword": false
         }
     }
 }

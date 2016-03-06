@@ -16,7 +16,6 @@ define([
             this.requesting(true);
             backend.login(this.email(), this.password()).then(function (response) {
                 that.requesting(false);
-
                 page('/admin');
             })
             .catch(function (err) {

@@ -7,4 +7,5 @@ www-prod/
 
 #Production configs
 config/config.cjson
+server/render/config.php
 

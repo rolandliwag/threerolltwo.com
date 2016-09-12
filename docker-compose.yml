@@ -8,3 +8,5 @@ services:
     build:
       context: .
       dockerfile: docker/api.docker
+    links:
+      - "db:db"

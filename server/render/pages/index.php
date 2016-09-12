@@ -5,16 +5,15 @@
 
 require('../config.php');
 require('../lib/ApiAdapter.php');
-require('../lib/HomePage.php')
+require('../lib/HomePage.php');
 
-$config = new Config();
-$apiAdapter = new ApiAdapter();
-$page = new HomePage($config, $apiAdapter);
+$apiAdapter = new ApiAdapter(CONFIG);
+$page = new HomePage(CONFIG, $apiAdapter);
 $page->load();
 
 ?>
     <title><?php echo $page->getTitle(); ?></title>
-    <?php echo '<link rel="stylesheet" type="text/css" href="' . $page->getStylesheetHref() . "/>'; ?>
+    <?php echo '<link rel="stylesheet" type="text/css" href="' . $page->getStylesheetHref() . '"/>'; ?>
 </head>
 <body>
     <?php echo $page->getHeader(); ?>

@@ -25,7 +25,7 @@ define([
 
     Backend.prototype.login = function (email, password) {
         return this.request({
-            url: '/login',
+            url: '/auth',
             method: 'POST',
             data: {
                 email: email,

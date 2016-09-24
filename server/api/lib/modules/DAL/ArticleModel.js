@@ -7,6 +7,7 @@ function Article(data) {
 	this.shortContent = data.shortContent || data.short_content;
 	this.content = data.content;
 	this.created = data.created_date;
+	this.tags = data.tags || [];
 }
 
 Article.prototype.isValid = function () {

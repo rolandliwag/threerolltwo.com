@@ -14,7 +14,7 @@
             "url": "postgres://threerolltwo_admin:123456@localhost/threerolltwo_com"
         },
         "api": {
-            "hostname": "//localhost:3000"
+            "hostname": "//api.threerolltwo.local:3000"
         },
         "auth": {
             "cookieName": "auth",

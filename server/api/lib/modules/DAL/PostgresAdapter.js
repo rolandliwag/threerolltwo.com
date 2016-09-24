@@ -42,7 +42,7 @@ function PostgresAdapter(dbConfig) {
                         });
                     }
 
-                    async.eachSeries(queries, client.query, function (err, result) {
+                    async.eachSeries(queries, client.query.bind(client), function (err, result) {
                         if (err) {
                             return rollback(err);
                         }

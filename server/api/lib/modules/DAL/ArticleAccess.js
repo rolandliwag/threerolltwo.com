@@ -13,33 +13,36 @@ function ArticleAccess(db) {
 	};
 
 	this.add = function (article) {
-        var tagQueryValues = [],
-            tagQueryValuesEnumerated = [],
-            url = article.url;
+        let tagQueryValues = [];
+		let tagQueryValuesEnumerated = [];
+		let queries = [];
 
-        article.tags.forEach(function (tag, index) {
-            tagQueryValues.push(url, tag);
-            tagQueryValuesEnumerated.push('$' + (index + 1), '$' + (index + 2));
-        });
+		const url = article.url;
 
-		return db.runTransaction([{
+		queries.push({
 			text: 'INSERT INTO article (url, title, subheading, top_image, short_content, content) VALUES($1, $2, $3, $4, $5, $6)',
 			values: [
 				article.url,
 				article.title,
 				article.subheading,
-				article.topImage,
+				article.topImageSrc,
 				article.shortContent,
 				article.content
 			]
-		}, {
-            text: 'INSERT INTO article_tag VALUES(' + tagQueryValuesEnumerated.join(',') + ')',
-            values: tagQueryValues
-        }]).catch(function (err) {
-			return new Promise(function (resolve, reject) {
-				reject(err);
-			});
 		});
+		
+		if (article.tags.length) {
+			article.tags.forEach(function (tag, index) {
+				tagQueryValues.push(url, tag);
+				tagQueryValuesEnumerated.push('$' + (index + 1), '$' + (index + 2));
+			});
+			queries.push({
+				text: 'INSERT INTO article_tag VALUES(' + tagQueryValuesEnumerated.join(',') + ')',
+				values: tagQueryValues
+			});
+		}
+
+		return db.runTransaction(queries);
 	};
 
 	this.get = function (url) {

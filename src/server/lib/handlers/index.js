@@ -1,10 +1,10 @@
-var express = require('express'),
-    bodyParser = require('body-parser'),
-    cookieParser = require('cookie-parser'),
-    cors = require('cors');
+const express = require('express');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
 module.exports = function createHandlers(config, dal) {
-	var app = express();
+	const app = express();
 
     if (config.cors) {
         app.use(cors(config.cors));
@@ -13,10 +13,9 @@ module.exports = function createHandlers(config, dal) {
     app.use(cookieParser());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
-    app.use('/article', require('./article')(config, dal));
-	app.use('/search', require('./search')(config, dal));
-	app.use('/email', require('./email')(config, dal));
-    app.use('/auth', require('./auth')(config));
+
+    app.use('/api', require('./api')(config, dal));
+    app.use('/', require('./pages')(config, dal));
 
 	return app;
 };

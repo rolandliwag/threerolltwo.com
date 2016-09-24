@@ -19,12 +19,6 @@ module.exports = function createServer(config) {
 
     app.use(require('./lib/handlers')(config, dal));
 
-    if (config.notYetLaunched) {
-        app.get('/', (req, res, next) => {
-            res.send('Not yet ready');
-        });
-    }
-
     app.use(express.static(resolvedPublicdir));
 
     return app;

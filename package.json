@@ -7,7 +7,7 @@
     "test": "mocha --recursive -R spec server/test"
   },
   "bin": {
-    "api-server": "bin/api-server.js"
+    "threerolltwo-server": "bin/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -42,8 +42,12 @@
     "page": "1.6.4",
     "passerror": "1.1.1",
     "pg": "6.1.0",
+    "pug": "^2.0.0-beta6",
     "purify": "3.3.1",
-    "react": "0.14.7",
+    "react": "^15.3.2",
+    "react-document-title": "^2.0.2",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
     "redux": "3.3.1",
     "serverrunner": "0.8.0",
     "underscore": "1.8.3",

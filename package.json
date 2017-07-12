@@ -1,6 +1,6 @@
 {
   "name": "threerolltwo.com",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "threerolltwo.com",
   "main": "index.js",
   "scripts": {
@@ -12,24 +12,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "assetgraph-builder": "3.11.0",
-    "express-compiless": "3.1.0",
-    "gulp": "3.9.0",
-    "htmlizer": "2.0.1",
-    "jquery": "2.1.4",
-    "jshint": "2.8.0",
     "less": "2.5.3",
     "mocha": "2.3.3",
-    "oconf": "4.1.0",
-    "requirejs": "2.1.20",
-    "requirejs-text": "2.0.12",
-    "sinon": "1.17.2",
-    "sinon-as-promised": "4.0.0",
-    "unexpected": "10.0.2",
-    "unexpected-sinon": "8.0.0"
+    "oconf": "4.1.0"
   },
   "dependencies": {
-    "async": "1.5.0",
     "axios": "0.7.0",
     "bluebird": "3.1.1",
     "body-parser": "1.14.1",
@@ -38,8 +25,6 @@
     "cors": "2.7.1",
     "express": "4.13.3",
     "httperrors": "1.1.0",
-    "jsonwebtoken": "5.4.1",
-    "knockout": "3.3.0",
     "morgan": "1.6.1",
     "one-validation": "2.2.0",
     "page": "1.6.4",
@@ -47,11 +32,6 @@
     "pg": "6.1.0",
     "purify": "3.3.1",
     "react": "0.14.7",
-    "redux": "3.3.1",
-    "requirejs-tpl": "0.3.0",
-    "serverrunner": "0.8.0",
-    "underscore": "1.8.3",
-    "webpack": "1.12.14",
-    "yargs": "3.29.0"
+    "redux": "3.3.1"
   }
 }
